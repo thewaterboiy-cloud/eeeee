@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "ระบบติดตามการยื่นบัญชีทรัพย์สิน",
+  "short_name": "ตรวจทรัพย์สิน",
+  "description": "ระบบอำนวยความสะดวกในการตรวจสอบทรัพย์สิน คำนวณวันหมดเขตยื่นบัญชี ฐานข้อมูลตำแหน่ง และติดตามการเสนอรายงานผู้บังคับบัญชา",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "categories": ["productivity", "utilities", "government"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

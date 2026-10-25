@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Outer Ring Shield -->
+  <path d="M256 64 L416 128 V264 C416 360 256 448 256 448 C256 448 96 360 96 264 V128 Z" fill="none" stroke="url(#goldGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- Inner Balance Scale / Inspection Shield -->
+  <path d="M256 96 L384 148 V256 C384 336 256 408 256 408 C256 408 128 336 128 256 V148 Z" fill="#1e293b" opacity="0.8" />
+
+  <!-- Central Emblem: Balance Beam -->
+  <rect x="248" y="160" width="16" height="150" rx="8" fill="url(#goldGrad)" />
+  <rect x="176" y="180" width="160" height="12" rx="6" fill="url(#goldGrad)" />
+
+  <!-- Left Scale Pan -->
+  <path d="M190 192 L160 260 H220 Z" fill="none" stroke="#93c5fd" stroke-width="8" stroke-linejoin="round" />
+  <circle cx="190" cy="260" r="28" fill="#3b82f6" opacity="0.8" />
+
+  <!-- Right Scale Pan -->
+  <path d="M322 192 L292 260 H352 Z" fill="none" stroke="#93c5fd" stroke-width="8" stroke-linejoin="round" />
+  <circle cx="322" cy="260" r="28" fill="#3b82f6" opacity="0.8" />
+
+  <!-- Base Pedestal -->
+  <path d="M208 310 H304 L320 334 H192 Z" fill="url(#goldGrad)" />
+
+  <!-- Checkmark Overlay -->
+  <circle cx="360" cy="360" r="64" fill="#10b981" />
+  <path d="M336 360 L352 376 L388 340" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>ระบบติดตามการยื่นบัญชีทรัพย์สิน (Asset Inspection Tracker)</title>
+    <meta name="description" content="ระบบอำนวยความสะดวกในการตรวจสอบทรัพย์สิน คำนวณวันและนับถอยหลังกำหนดการยื่นบัญชี ฐานข้อมูลตำแหน่งที่ต้องยื่นตามกฎหมาย และบันทึกติดตามการยื่นพร้อมเสนอรายงานผู้บังคับบัญชา รองรับการใช้งานฟรีบน iPad และทุกอุปกรณ์" />
+    <meta property="og:title" content="ระบบติดตามการยื่นบัญชีทรัพย์สิน (Asset Inspection Tracker)" />
+    <meta property="og:description" content="ระบบอำนวยความสะดวกในการตรวจสอบทรัพย์สิน คำนวณวันและนับถอยหลังกำหนดการยื่นบัญชี ฐานข้อมูลตำแหน่งที่ต้องยื่นตามกฎหมาย และบันทึกติดตามการยื่นพร้อมเสนอรายงานผู้บังคับบัญชา" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- PWA & Android Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- iPad & iOS Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ตรวจทรัพย์สิน" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+
+    <!-- Typography: Sarabun (Official Thai) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased font-['Sarabun',sans-serif] selection:bg-blue-100 selection:text-blue-900 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
