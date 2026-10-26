@@ -327,8 +327,8 @@ export function getDeadlineUrgency(
       daysRemaining: 0,
       label: 'ยื่นบัญชีแล้ว',
       urgency: 'submitted',
-      textColor: 'text-emerald-700 dark:text-emerald-400',
-      badgeBg: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300'
+      textColor: 'text-emerald-300',
+      badgeBg: 'bg-emerald-950/70 border border-emerald-800/60 text-emerald-300'
     };
   }
 
@@ -339,8 +339,8 @@ export function getDeadlineUrgency(
       daysRemaining: days,
       label: `เกินกำหนด ${Math.abs(days)} วัน`,
       urgency: 'overdue',
-      textColor: 'text-rose-700 dark:text-rose-400',
-      badgeBg: 'bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300'
+      textColor: 'text-rose-300',
+      badgeBg: 'bg-rose-950/70 border border-rose-800/60 text-rose-300'
     };
   }
 
@@ -349,8 +349,8 @@ export function getDeadlineUrgency(
       daysRemaining: 0,
       label: 'ครบกำหนดวันนี้',
       urgency: 'critical',
-      textColor: 'text-rose-600 dark:text-rose-400',
-      badgeBg: 'bg-rose-100 dark:bg-rose-900/40 text-rose-800 dark:text-rose-200'
+      textColor: 'text-rose-300',
+      badgeBg: 'bg-rose-950/80 border border-rose-800/70 text-rose-300'
     };
   }
 
@@ -359,8 +359,8 @@ export function getDeadlineUrgency(
       daysRemaining: days,
       label: `เหลืออีก ${days} วัน (ด่วนมาก)`,
       urgency: 'critical',
-      textColor: 'text-amber-700 dark:text-amber-400',
-      badgeBg: 'bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-200'
+      textColor: 'text-amber-300',
+      badgeBg: 'bg-amber-950/80 border border-amber-800/70 text-amber-300'
     };
   }
 
@@ -369,8 +369,8 @@ export function getDeadlineUrgency(
       daysRemaining: days,
       label: `เหลืออีก ${days} วัน`,
       urgency: 'warning',
-      textColor: 'text-amber-600 dark:text-amber-400',
-      badgeBg: 'bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300'
+      textColor: 'text-amber-300',
+      badgeBg: 'bg-amber-950/50 border border-amber-800/50 text-amber-300'
     };
   }
 
@@ -378,8 +378,8 @@ export function getDeadlineUrgency(
     daysRemaining: days,
     label: `เหลืออีก ${days} วัน`,
     urgency: 'normal',
-    textColor: 'text-slate-600 dark:text-slate-400',
-    badgeBg: 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+    textColor: 'text-slate-300',
+    badgeBg: 'bg-slate-800/80 border border-slate-700/60 text-slate-300'
   };
 }
 

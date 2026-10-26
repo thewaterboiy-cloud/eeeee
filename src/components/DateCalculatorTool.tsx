@@ -170,19 +170,19 @@ ${calculation.wasPostponed
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6 text-slate-100">
       {/* Header section */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6">
+      <div className="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 sm:p-7 shadow-xl shadow-black/20">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-5 mb-6">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm">
+            <div className="w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm shadow-blue-500/20">
               <Calculator className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight">
                 เครื่องคำนวณวันและกำหนดเวลายื่นบัญชีทรัพย์สิน
               </h1>
-              <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+              <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
                 คำนวณวันครบกำหนด ๖๐ วัน / ๙๐ วัน กรณีตรงกับวันหยุดราชการ ให้นับวันทำการก่อนวันสิ้นสุด
               </p>
             </div>
@@ -191,13 +191,13 @@ ${calculation.wasPostponed
           <div className="flex items-center gap-2 self-start sm:self-auto">
             <button
               onClick={handleReset}
-              className="px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700/80 border border-slate-700/60 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
               title="รีเซ็ตค่าเป็นค่าเริ่มต้น"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>รีเซ็ต</span>
             </button>
-            <div className="text-xs text-slate-600 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 font-medium">
+            <div className="text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/60 font-medium">
               พ.ร.ป. ป.ป.ช. ๒๕๖๑
             </div>
           </div>
@@ -209,7 +209,7 @@ ${calculation.wasPostponed
           <div className="space-y-4">
             {/* Step 1: Declaration Type */}
             <div>
-              <label className="block text-sm font-semibold text-slate-800 mb-1.5">
+              <label className="block text-sm font-semibold text-slate-200 mb-1.5">
                 ๑. เลือกประเภทการยื่นบัญชี
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -219,14 +219,14 @@ ${calculation.wasPostponed
                     setDeclarationType('take_office');
                     setCustomDays(60);
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all ${
+                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                     declarationType === 'take_office'
-                      ? 'border-blue-600 bg-blue-50/80 text-blue-900 shadow-xs ring-1 ring-blue-600/20'
-                      : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 shadow-sm ring-1 ring-blue-500/40'
+                      : 'border-slate-800 bg-slate-950/50 hover:bg-slate-800/60 text-slate-300 hover:border-slate-700'
                   }`}
                 >
                   <div className="font-bold">เข้ารับตำแหน่ง</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">ภายใน ๖๐ วัน</div>
+                  <div className={`text-[11px] mt-0.5 ${declarationType === 'take_office' ? 'text-blue-300/80' : 'text-slate-400'}`}>ภายใน ๖๐ วัน</div>
                 </button>
 
                 <button
@@ -235,14 +235,14 @@ ${calculation.wasPostponed
                     setDeclarationType('vacate_office');
                     setCustomDays(60);
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all ${
+                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                     declarationType === 'vacate_office'
-                      ? 'border-blue-600 bg-blue-50/80 text-blue-900 shadow-xs ring-1 ring-blue-600/20'
-                      : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 shadow-sm ring-1 ring-blue-500/40'
+                      : 'border-slate-800 bg-slate-950/50 hover:bg-slate-800/60 text-slate-300 hover:border-slate-700'
                   }`}
                 >
                   <div className="font-bold">พ้นจากตำแหน่ง</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">ภายใน ๖๐ วัน</div>
+                  <div className={`text-[11px] mt-0.5 ${declarationType === 'vacate_office' ? 'text-blue-300/80' : 'text-slate-400'}`}>ภายใน ๖๐ วัน</div>
                 </button>
 
                 <button
@@ -251,14 +251,14 @@ ${calculation.wasPostponed
                     setDeclarationType('vacate_1year');
                     setCustomDays(60);
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all ${
+                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                     declarationType === 'vacate_1year'
-                      ? 'border-blue-600 bg-blue-50/80 text-blue-900 shadow-xs ring-1 ring-blue-600/20'
-                      : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 shadow-sm ring-1 ring-blue-500/40'
+                      : 'border-slate-800 bg-slate-950/50 hover:bg-slate-800/60 text-slate-300 hover:border-slate-700'
                   }`}
                 >
                   <div className="font-bold">พ้นตำแหน่งครบ ๑ ปี</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">ภายใน ๖๐ วัน (เฉพาะ ผบช./การเมือง)</div>
+                  <div className={`text-[11px] mt-0.5 ${declarationType === 'vacate_1year' ? 'text-blue-300/80' : 'text-slate-400'}`}>ภายใน ๖๐ วัน (เฉพาะ ผบช./การเมือง)</div>
                 </button>
 
                 <button
@@ -277,19 +277,19 @@ ${calculation.wasPostponed
                       if (computed) setEventDate(computed);
                     }
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all ${
+                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                     declarationType === 'every_3years'
-                      ? 'border-blue-600 bg-blue-50/90 text-blue-950 shadow-xs ring-2 ring-blue-600/30'
-                      : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                      ? 'border-blue-500 bg-blue-950/70 text-blue-100 shadow-sm ring-1 ring-blue-500/40'
+                      : 'border-slate-800 bg-slate-950/50 hover:bg-slate-800/60 text-slate-300 hover:border-slate-700'
                   }`}
                 >
-                  <div className="font-bold flex items-center justify-between text-blue-950">
+                  <div className="font-bold flex items-center justify-between">
                     <span>วันที่มีหน้าที่ยื่นครบ ๓ ปี</span>
-                    <span className="text-[10px] bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded font-mono font-semibold">
+                    <span className="text-[10px] bg-blue-900/80 text-blue-200 border border-blue-700/60 px-1.5 py-0.5 rounded font-mono font-semibold">
                       ครบ ๓ ปี
                     </span>
                   </div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">ดำรงตำแหน่งครบ ๓ ปีติดต่อกัน (ภายใน ๓๐ หรือ ๖๐ วัน)</div>
+                  <div className={`text-[11px] mt-0.5 ${declarationType === 'every_3years' ? 'text-blue-300/80' : 'text-slate-400'}`}>ดำรงตำแหน่งครบ ๓ ปีติดต่อกัน (ภายใน ๓๐ หรือ ๖๐ วัน)</div>
                 </button>
 
                 <button
@@ -297,14 +297,14 @@ ${calculation.wasPostponed
                   onClick={() => {
                     setDeclarationType('annual');
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all sm:col-span-2 ${
+                  className={`p-3 text-left rounded-xl border text-xs sm:text-sm font-medium transition-all sm:col-span-2 cursor-pointer ${
                     declarationType === 'annual'
-                      ? 'border-blue-600 bg-blue-50/80 text-blue-900 shadow-xs ring-1 ring-blue-600/20'
-                      : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 shadow-sm ring-1 ring-blue-500/40'
+                      : 'border-slate-800 bg-slate-950/50 hover:bg-slate-800/60 text-slate-300 hover:border-slate-700'
                   }`}
                 >
                   <div className="font-bold">กำหนดเฉพาะ / อื่นๆ</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">ระบุจำนวนวันตามประกาศหรือระเบียบหน่วยงาน</div>
+                  <div className={`text-[11px] mt-0.5 ${declarationType === 'annual' ? 'text-blue-300/80' : 'text-slate-400'}`}>ระบุจำนวนวันตามประกาศหรือระเบียบหน่วยงาน</div>
                 </button>
               </div>
             </div>
@@ -312,36 +312,36 @@ ${calculation.wasPostponed
             {/* Step 2: Date Inputs & 3-Year Calculator Section */}
             {declarationType === 'every_3years' ? (
               /* Dedicated 3-Year Section */
-              <div className="p-4 bg-blue-50/60 border border-blue-200 rounded-2xl space-y-4">
-                <div className="flex items-center justify-between border-b border-blue-100 pb-2">
-                  <label className="text-sm font-bold text-blue-950 flex items-center gap-1.5">
-                    <Calendar className="w-4 h-4 text-blue-600" />
+              <div className="p-4 bg-slate-950/70 border border-blue-900/60 rounded-2xl space-y-4 shadow-inner">
+                <div className="flex items-center justify-between border-b border-slate-800/90 pb-2">
+                  <label className="text-sm font-bold text-blue-300 flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-blue-400" />
                     <span>๒. วันที่มีหน้าที่ยื่นครบ ๓ ปี (วันดำรงตำแหน่งครบ ๓ ปี)</span>
                   </label>
-                  <span className="text-[11px] text-blue-800 bg-blue-100 font-semibold px-2 py-0.5 rounded-full">
+                  <span className="text-[11px] text-blue-300 bg-blue-950 border border-blue-800/60 font-semibold px-2 py-0.5 rounded-full">
                     พ.ร.ป. ป.ป.ช. ม.๑๐๕ วรรคสาม
                   </span>
                 </div>
 
                 {/* Sub-card 1: Appointment Date */}
-                <div className="space-y-1.5 bg-white p-3 rounded-xl border border-blue-100 shadow-2xs">
+                <div className="space-y-1.5 bg-slate-900/90 p-3 rounded-xl border border-slate-800 shadow-xs">
                   <div className="flex items-center justify-between">
-                    <label className="text-xs font-bold text-slate-800">
+                    <label className="text-xs font-bold text-slate-200">
                       (ก) วันที่เข้ารับตำแหน่งเดิม:
                     </label>
                     <div className="flex items-center gap-1 text-[11px]">
                       <button
                         type="button"
                         onClick={setAppointment3YearsAgo}
-                        className="text-blue-600 hover:underline"
+                        className="text-blue-400 hover:text-blue-300 hover:underline cursor-pointer"
                       >
                         ๓ ปีก่อนวันนี้
                       </button>
-                      <span className="text-slate-300">·</span>
+                      <span className="text-slate-600">·</span>
                       <button
                         type="button"
                         onClick={() => handleAppointmentDateChange('2021-10-01')}
-                        className="text-slate-500 hover:underline"
+                        className="text-slate-400 hover:text-slate-300 hover:underline cursor-pointer"
                       >
                         ๑ ต.ค. ๖๔
                       </button>
@@ -351,16 +351,16 @@ ${calculation.wasPostponed
                     type="date"
                     value={appointmentDate}
                     onChange={(e) => handleAppointmentDateChange(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 text-xs focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none font-sans"
+                    className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-slate-100 text-xs focus:ring-1 focus:ring-blue-500 outline-none font-sans [color-scheme:dark]"
                   />
                   {appointmentDate && (
-                    <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
-                      <span>วันตามปฏิทินไทย: <strong>{formatThaiDateFull(appointmentDate)}</strong></span>
+                    <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+                      <span>วันตามปฏิทินไทย: <strong className="text-slate-200">{formatThaiDateFull(appointmentDate)}</strong></span>
                       <div className="flex gap-1.5">
                         <button
                           type="button"
                           onClick={() => handleCalculate3YearsFromStart(appointmentDate, false)}
-                          className="px-2 py-0.5 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded border border-blue-200 font-semibold text-[10px]"
+                          className="px-2 py-0.5 bg-blue-950 hover:bg-blue-900 text-blue-300 rounded border border-blue-800/70 font-semibold text-[10px] cursor-pointer"
                           title="คำนวณวันตรงกันอีก 3 ปี"
                         >
                           +๓ ปีพอดี
@@ -368,7 +368,7 @@ ${calculation.wasPostponed
                         <button
                           type="button"
                           onClick={() => handleCalculate3YearsFromStart(appointmentDate, true)}
-                          className="px-2 py-0.5 bg-slate-50 hover:bg-slate-100 text-slate-600 rounded border border-slate-200 text-[10px]"
+                          className="px-2 py-0.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded border border-slate-700/60 text-[10px] cursor-pointer"
                           title="คำนวณวันก่อนครบ 1 วัน"
                         >
                           ก่อนครบ ๑ วัน
@@ -379,13 +379,13 @@ ${calculation.wasPostponed
                 </div>
 
                 {/* Sub-card 2: 3-Year Completion Date (วันที่มีหน้าที่ยื่นครบ ๓ ปี) */}
-                <div className="space-y-1.5 bg-white p-3.5 rounded-xl border-2 border-blue-500 shadow-2xs">
+                <div className="space-y-1.5 bg-slate-900/90 p-3.5 rounded-xl border-2 border-blue-500/80 shadow-md shadow-blue-950/30">
                   <div className="flex items-center justify-between">
-                    <label className="text-xs font-bold text-blue-950 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-blue-600" />
+                    <label className="text-xs font-bold text-blue-200 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-blue-400" />
                       <span>(ข) วันที่มีหน้าที่ยื่นครบ ๓ ปี (วันดำรงตำแหน่งครบ ๓ ปี):</span>
                     </label>
-                    <span className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 font-bold px-1.5 py-0.5 rounded">
+                    <span className="text-[10px] text-emerald-400 bg-emerald-950/80 border border-emerald-800/70 font-bold px-1.5 py-0.5 rounded">
                       วันตั้งต้นคำนวณ
                     </span>
                   </div>
@@ -393,23 +393,23 @@ ${calculation.wasPostponed
                     type="date"
                     value={eventDate}
                     onChange={(e) => setEventDate(e.target.value)}
-                    className="w-full px-3 py-2 bg-blue-50/40 border border-blue-400 rounded-lg text-slate-900 text-sm font-semibold focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none font-sans"
+                    className="w-full px-3 py-2 bg-slate-950 border border-blue-500/80 rounded-lg text-blue-200 text-sm font-semibold focus:ring-1 focus:ring-blue-400 outline-none font-sans [color-scheme:dark]"
                   />
                   <div className="space-y-1 pt-1 text-xs">
-                    <div className="text-slate-700 font-medium">
-                      วันที่มีหน้าที่ยื่นครบ ๓ ปี: <span className="font-bold text-blue-900">{formatThaiDateFull(eventDate)}</span>
+                    <div className="text-slate-300 font-medium">
+                      วันที่มีหน้าที่ยื่นครบ ๓ ปี: <span className="font-bold text-blue-300">{formatThaiDateFull(eventDate)}</span>
                     </div>
-                    <div className="text-slate-500 text-[11px]">
-                      วันเริ่มนับวันแรก (วันถัดไป): <span className="font-semibold text-blue-700">{formatThaiDateFull(startCountDate || eventDate)}</span>
+                    <div className="text-slate-400 text-[11px]">
+                      วันเริ่มนับวันแรก (วันถัดไป): <span className="font-semibold text-blue-400">{formatThaiDateFull(startCountDate || eventDate)}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Duration selector for 3-Year Declaration */}
                 <div className="space-y-1.5 pt-1 text-xs">
-                  <div className="flex items-center justify-between font-semibold text-slate-800">
+                  <div className="flex items-center justify-between font-semibold text-slate-300">
                     <span>ระยะเวลาการยื่นบัญชีทรัพย์สิน:</span>
-                    <span className="font-mono text-blue-900 bg-blue-100 px-2 py-0.5 rounded font-bold">
+                    <span className="font-mono text-blue-200 bg-blue-950 border border-blue-800/60 px-2 py-0.5 rounded font-bold">
                       ภายใน {customDays} วัน
                     </span>
                   </div>
@@ -417,10 +417,10 @@ ${calculation.wasPostponed
                     <button
                       type="button"
                       onClick={() => setCustomDays(30)}
-                      className={`py-2 px-2.5 rounded-lg border text-xs font-medium transition-all ${
+                      className={`py-2 px-2.5 rounded-lg border text-xs font-medium transition-all cursor-pointer ${
                         customDays === 30 
-                          ? 'bg-blue-600 text-white border-blue-600 font-semibold shadow-2xs' 
-                          : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                          ? 'bg-blue-600 text-white border-blue-500 font-semibold shadow-xs' 
+                          : 'bg-slate-950 text-slate-300 border-slate-800 hover:bg-slate-850 hover:border-slate-700'
                       }`}
                     >
                       <div>ภายใน ๓๐ วัน</div>
@@ -429,10 +429,10 @@ ${calculation.wasPostponed
                     <button
                       type="button"
                       onClick={() => setCustomDays(60)}
-                      className={`py-2 px-2.5 rounded-lg border text-xs font-medium transition-all ${
+                      className={`py-2 px-2.5 rounded-lg border text-xs font-medium transition-all cursor-pointer ${
                         customDays === 60 
-                          ? 'bg-blue-600 text-white border-blue-600 font-semibold shadow-2xs' 
-                          : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                          ? 'bg-blue-600 text-white border-blue-500 font-semibold shadow-xs' 
+                          : 'bg-slate-950 text-slate-300 border-slate-800 hover:bg-slate-850 hover:border-slate-700'
                       }`}
                     >
                       <div>ภายใน ๖๐ วัน</div>
@@ -445,7 +445,7 @@ ${calculation.wasPostponed
               /* Standard Date Inputs for other declaration types */
               <div>
                 <div className="flex items-center justify-between mb-1.5">
-                  <label className="text-sm font-semibold text-slate-800">
+                  <label className="text-sm font-semibold text-slate-200">
                     {declarationType === 'take_office'
                       ? '๒. วันที่เริ่มมีหน้าที่ (วันเข้ารับตำแหน่ง)'
                       : declarationType === 'vacate_office'
@@ -459,15 +459,15 @@ ${calculation.wasPostponed
                     <button
                       type="button"
                       onClick={() => setQuickPreset(0)}
-                      className="text-blue-600 hover:underline"
+                      className="text-blue-400 hover:text-blue-300 hover:underline cursor-pointer"
                     >
                       วันนี้
                     </button>
-                    <span className="text-slate-300">·</span>
+                    <span className="text-slate-600">·</span>
                     <button
                       type="button"
                       onClick={() => setQuickPreset(-30)}
-                      className="text-slate-500 hover:underline"
+                      className="text-slate-400 hover:text-slate-300 hover:underline cursor-pointer"
                     >
                       ย้อน ๓๐ วัน
                     </button>
@@ -479,17 +479,17 @@ ${calculation.wasPostponed
                     type="date"
                     value={eventDate}
                     onChange={(e) => setEventDate(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 text-sm focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors font-sans"
+                    className="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-slate-100 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 outline-none transition-colors font-sans [color-scheme:dark]"
                   />
                 </div>
-                <div className="mt-1 text-xs text-slate-500">
-                  วันตามปฏิทินไทย: <span className="font-medium text-slate-800">{formatThaiDateFull(eventDate)}</span>
+                <div className="mt-1 text-xs text-slate-400">
+                  วันตามปฏิทินไทย: <span className="font-medium text-slate-200">{formatThaiDateFull(eventDate)}</span>
                 </div>
 
                 {/* Switch to 3-Year Mode shortcut hint */}
-                <div className="mt-2.5 p-2.5 bg-blue-50/70 border border-blue-200/80 rounded-xl flex items-center justify-between text-xs text-blue-900">
+                <div className="mt-2.5 p-2.5 bg-blue-950/40 border border-blue-900/60 rounded-xl flex items-center justify-between text-xs text-blue-300">
                   <span className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                     ต้องการคำนวณ <strong>วันที่มีหน้าที่ยื่นครบ ๓ ปี</strong> หรือไม่?
                   </span>
                   <button
@@ -508,7 +508,7 @@ ${calculation.wasPostponed
                         if (computed) setEventDate(computed);
                       }
                     }}
-                    className="font-bold text-blue-700 hover:text-blue-950 underline shrink-0 ml-2"
+                    className="font-bold text-blue-400 hover:text-blue-200 underline shrink-0 ml-2 cursor-pointer"
                   >
                     คำนวณวันครบ ๓ ปี
                   </button>
@@ -518,8 +518,8 @@ ${calculation.wasPostponed
 
             {/* Custom Days Input if 'annual' selected */}
             {declarationType === 'annual' && (
-              <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5">
-                <label className="block text-xs font-semibold text-slate-800">
+              <div className="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-1.5">
+                <label className="block text-xs font-semibold text-slate-200">
                   ระบุจำนวนวันที่กำหนด (วัน)
                 </label>
                 <div className="flex gap-2 items-center">
@@ -529,15 +529,15 @@ ${calculation.wasPostponed
                     max="365"
                     value={customDays}
                     onChange={(e) => setCustomDays(Number(e.target.value) || 30)}
-                    className="w-32 px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none font-mono"
+                    className="w-32 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-slate-100 focus:ring-1 focus:ring-blue-500 outline-none font-mono"
                   />
-                  <span className="text-xs text-slate-600">วัน นับแต่วันถัดจากวันเริ่มมีหน้าที่</span>
+                  <span className="text-xs text-slate-400">วัน นับแต่วันถัดจากวันเริ่มมีหน้าที่</span>
                 </div>
               </div>
             )}
 
             {/* Step 3: Extension (+30 days) */}
-            <div className="p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl space-y-2">
+            <div className="p-3.5 bg-amber-950/25 border border-amber-900/50 rounded-xl space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <input
@@ -545,41 +545,41 @@ ${calculation.wasPostponed
                     id="calcExtension"
                     checked={isExtended}
                     onChange={(e) => setIsExtended(e.target.checked)}
-                    className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500 cursor-pointer"
+                    className="w-4 h-4 text-blue-600 rounded border-slate-600 bg-slate-900 focus:ring-blue-500 cursor-pointer accent-blue-600"
                   />
-                  <label htmlFor="calcExtension" className="text-sm font-semibold text-amber-950 cursor-pointer">
+                  <label htmlFor="calcExtension" className="text-sm font-semibold text-amber-200 cursor-pointer">
                     ขอขยายระยะเวลายื่น (+๓๐ วัน)
                   </label>
                 </div>
-                <span className="text-xs font-mono px-2 py-0.5 bg-amber-200 text-amber-900 rounded font-bold">
+                <span className="text-xs font-mono px-2 py-0.5 bg-amber-950 text-amber-300 border border-amber-800/60 rounded font-bold">
                   {isExtended ? '+๓๐ วัน (รวม ๙๐ วัน)' : 'ไม่ขยาย'}
                 </span>
               </div>
-              <p className="text-[12px] text-amber-800 leading-relaxed">
+              <p className="text-[12px] text-amber-300/80 leading-relaxed">
                 ตามระเบียบ ป.ป.ช. หากมีเหตุจำเป็นอันมิอาจก้าวล่วงได้ ผู้มีหน้าที่ยื่นสามารถยื่นคำร้องขอขยายเวลาได้ไม่เกิน ๓๐ วัน ก่อนครบกำหนดเดิม
               </p>
             </div>
 
             {/* Step 4: Holiday Roll Mode (Preceding by default as requested) */}
-            <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
-              <label className="block text-xs font-bold text-slate-800">
+            <div className="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
+              <label className="block text-xs font-bold text-slate-300">
                 เกณฑ์กรณีวันสิ้นสุดตรงกับวันหยุดทำการ (เสาร์-อาทิตย์ / วันหยุดราชการ):
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 <button
                   type="button"
                   onClick={() => setRollMode('preceding')}
-                  className={`p-2.5 text-left rounded-lg border transition-all ${
+                  className={`p-2.5 text-left rounded-lg border transition-all cursor-pointer ${
                     rollMode === 'preceding'
-                      ? 'border-blue-600 bg-blue-50/90 text-blue-900 font-bold shadow-xs'
-                      : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-100'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 font-bold shadow-xs'
+                      : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:bg-slate-850 hover:text-slate-300'
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                     <span>ให้นับวันทำการก่อนวันสิ้นสุด</span>
                   </div>
-                  <div className="text-[11px] text-slate-500 font-normal mt-0.5 pl-3.5">
+                  <div className="text-[11px] text-slate-400 font-normal mt-0.5 pl-3.5">
                     (เลื่อนขึ้นเป็นวันทำการก่อนหน้า)
                   </div>
                 </button>
@@ -587,17 +587,17 @@ ${calculation.wasPostponed
                 <button
                   type="button"
                   onClick={() => setRollMode('next')}
-                  className={`p-2.5 text-left rounded-lg border transition-all ${
+                  className={`p-2.5 text-left rounded-lg border transition-all cursor-pointer ${
                     rollMode === 'next'
-                      ? 'border-blue-600 bg-blue-50/90 text-blue-900 font-bold shadow-xs'
-                      : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-100'
+                      ? 'border-blue-500 bg-blue-950/60 text-blue-200 font-bold shadow-xs'
+                      : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:bg-slate-850 hover:text-slate-300'
                   }`}
                 >
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
                     <span>ให้นับวันทำการถัดไป</span>
                   </div>
-                  <div className="text-[11px] text-slate-500 font-normal mt-0.5 pl-3.5">
+                  <div className="text-[11px] text-slate-400 font-normal mt-0.5 pl-3.5">
                     (ตาม ป.พ.พ. มาตรา ๑๙๓/๘)
                   </div>
                 </button>
@@ -606,9 +606,9 @@ ${calculation.wasPostponed
           </div>
 
           {/* Right Column: Calculation Results Card */}
-          <div className="bg-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+          <div className="bg-slate-950 rounded-2xl p-6 text-white flex flex-col justify-between shadow-xl border border-slate-800/90">
             <div>
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-5">
+              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-5">
                 <div className="text-xs font-semibold text-slate-400">ผลการคำนวณกำหนดเวลาอย่างเป็นทางการ</div>
                 <div className={`text-xs px-2.5 py-1 rounded-full font-bold ${urgency.badgeBg}`}>
                   {urgency.label}
@@ -630,7 +630,7 @@ ${calculation.wasPostponed
               </div>
 
               {/* Breakdown steps */}
-              <div className="space-y-3 text-xs border-t border-slate-800 pt-4 font-mono text-slate-300">
+              <div className="space-y-3 text-xs border-t border-slate-800/80 pt-4 font-mono text-slate-300">
                 <div className="flex justify-between items-center font-sans">
                   <span className="text-slate-400">ประเภทการยื่น:</span>
                   <span className="font-semibold text-blue-300 text-right">
@@ -639,7 +639,7 @@ ${calculation.wasPostponed
                 </div>
 
                 {declarationType === 'every_3years' && appointmentDate && (
-                  <div className="flex justify-between items-center bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-700/60 font-sans">
+                  <div className="flex justify-between items-center bg-slate-900/90 px-2.5 py-1.5 rounded-lg border border-slate-800 font-sans">
                     <span className="text-slate-400">วันที่เข้ารับตำแหน่งเดิม:</span>
                     <span className="font-semibold text-slate-200">{formatThaiDate(appointmentDate)}</span>
                   </div>
@@ -649,7 +649,7 @@ ${calculation.wasPostponed
                   <span className="text-slate-400 font-sans">
                     {declarationType === 'every_3years' ? 'วันที่มีหน้าที่ยื่นครบ ๓ ปี:' : 'วันเริ่มมีหน้าที่:'}
                   </span>
-                  <span className={`font-semibold ${declarationType === 'every_3years' ? 'text-amber-300 font-bold' : 'text-white'}`}>
+                  <span className={`font-semibold ${declarationType === 'every_3years' ? 'text-amber-300 font-bold' : 'text-slate-100'}`}>
                     {formatThaiDate(eventDate)}
                   </span>
                 </div>
@@ -661,7 +661,7 @@ ${calculation.wasPostponed
 
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 font-sans">ระยะเวลาตามเกณฑ์:</span>
-                  <span className="font-semibold text-white">
+                  <span className="font-semibold text-slate-100">
                     {customDays} วัน {isExtended && `+ ๓๐ วัน (ขยายเวลา) = ${customDays + extensionDays} วัน`}
                   </span>
                 </div>
@@ -686,7 +686,7 @@ ${calculation.wasPostponed
                 </div>
 
                 {calculation.wasPostponed ? (
-                  <div className="p-3 bg-amber-950/70 border border-amber-800/80 rounded-xl text-amber-200 text-[11px] leading-relaxed font-sans">
+                  <div className="p-3 bg-amber-950/60 border border-amber-800/70 rounded-xl text-amber-200 text-[11px] leading-relaxed font-sans">
                     <div className="font-bold flex items-center gap-1.5 text-amber-300 mb-1 flex-wrap">
                       <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
                       <span>วันสิ้นสุดเดิมตรงกับวันหยุดทำการ</span>
@@ -706,13 +706,13 @@ ${calculation.wasPostponed
                       : `ตาม ป.พ.พ. มาตรา ๑๙๓/๘ ให้นับวันทำการถัดไป เลื่อนมาเป็นวัน${THAI_DAYS[calculation.adjustedDate.getDay()]}ที่ ${formatThaiDate(calculation.adjustedDate)}`}
                   </div>
                 ) : (
-                  <div className="p-2.5 bg-slate-800/80 rounded-xl text-slate-300 text-[11px] flex items-center gap-1.5 font-sans">
+                  <div className="p-2.5 bg-slate-900/80 border border-slate-800 rounded-xl text-slate-300 text-[11px] flex items-center gap-1.5 font-sans">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     วันสิ้นสุดตรงกับวันทำการปกติของราชการ
                   </div>
                 )}
 
-                <div className="flex justify-between items-center pt-3 border-t border-slate-800 text-sm font-sans">
+                <div className="flex justify-between items-center pt-3 border-t border-slate-800/80 text-sm font-sans">
                   <span className="text-slate-300 font-medium">สถานะนับจากวันนี้:</span>
                   <span className={`font-bold tabular-nums ${daysRemaining < 0 ? 'text-rose-400' : daysRemaining <= 7 ? 'text-amber-400' : 'text-emerald-400'}`}>
                     {daysRemaining < 0 
@@ -726,11 +726,11 @@ ${calculation.wasPostponed
             </div>
 
             {/* Quick Action buttons */}
-            <div className="mt-6 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2">
+            <div className="mt-6 pt-4 border-t border-slate-800/80 grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={handleCopySummary}
-                className="py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs rounded-xl transition-colors flex items-center justify-center gap-1.5"
+                className="py-2.5 px-3 bg-slate-850 hover:bg-slate-800 text-slate-200 font-semibold text-xs rounded-xl border border-slate-700/60 transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copied ? 'คัดลอกข้อความแล้ว' : 'คัดลอกผลสรุป'}</span>
@@ -739,7 +739,7 @@ ${calculation.wasPostponed
               <button
                 type="button"
                 onClick={handlePrint}
-                className="py-2.5 px-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-xs rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+                className="py-2.5 px-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold text-xs rounded-xl transition-colors flex items-center justify-center gap-1.5 shadow-sm shadow-blue-500/20 cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>พิมพ์ / บันทึก PDF</span>
@@ -749,7 +749,7 @@ ${calculation.wasPostponed
         </div>
       </div>
 
-      {/* Printable Area for Formal Slip (When Print button clicked) */}
+      {/* Printable Area for Formal Slip (When Print button clicked) - Crisp Official Paper Style */}
       <div 
         id="official-memo-print-area" 
         className="hidden print:block bg-white text-black p-8 border border-black space-y-4 font-['Sarabun']"
@@ -792,32 +792,32 @@ ${calculation.wasPostponed
       </div>
 
       {/* Legal Reference & Knowledge Box */}
-      <div className="bg-slate-100/90 rounded-2xl p-6 border border-slate-200">
-        <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2 mb-3">
-          <Info className="w-4 h-4 text-blue-600" />
+      <div className="bg-slate-900/80 rounded-2xl p-6 border border-slate-800 shadow-lg">
+        <h3 className="text-sm font-bold text-slate-200 flex items-center gap-2 mb-3">
+          <Info className="w-4 h-4 text-blue-400" />
           หลักเกณฑ์และข้อกฎหมายสำคัญในการนับกำหนดเวลายื่นบัญชีทรัพย์สิน
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-600">
-          <div className="p-3.5 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
-            <div className="font-bold text-slate-900 mb-1">๑. การนับวันแรก (Day 1)</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-400">
+          <div className="p-3.5 bg-slate-950/70 rounded-xl border border-slate-800/80 shadow-2xs">
+            <div className="font-bold text-slate-200 mb-1">๑. การนับวันแรก (Day 1)</div>
             <p className="leading-relaxed">
               ตาม ป.พ.พ. มาตรา ๑๙๓/๓ วรรคสอง มิให้นับวันแรกแห่งระยะเวลารวมเข้าด้วยกัน ให้เริ่มนับวันถัดไปเป็นวันแรก
             </p>
           </div>
-          <div className="p-3.5 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
-            <div className="font-bold text-slate-900 mb-1">๒. วันหยุดราชการในวันสิ้นสุด</div>
+          <div className="p-3.5 bg-slate-950/70 rounded-xl border border-slate-800/80 shadow-2xs">
+            <div className="font-bold text-slate-200 mb-1">๒. วันหยุดราชการในวันสิ้นสุด</div>
             <p className="leading-relaxed">
               กำหนดให้นับวันทำการก่อนวันสิ้นสุด (Preceding Working Day) เพื่อให้การยื่นเอกสารเสร็จสิ้นก่อนวันหยุดทำการ
             </p>
           </div>
-          <div className="p-3.5 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
-            <div className="font-bold text-slate-900 mb-1">๓. การขอขยายระยะเวลา</div>
+          <div className="p-3.5 bg-slate-950/70 rounded-xl border border-slate-800/80 shadow-2xs">
+            <div className="font-bold text-slate-200 mb-1">๓. การขอขยายระยะเวลา</div>
             <p className="leading-relaxed">
               ต้องยื่นคำร้องก่อนพ้นกำหนด โดยผู้มีอำนาจอาจอนุญาตให้ขยายได้ไม่เกิน ๓๐ วัน
             </p>
           </div>
-          <div className="p-3.5 bg-white rounded-xl border border-slate-200/80 shadow-2xs">
-            <div className="font-bold text-slate-900 mb-1">๔. วันที่มีหน้าที่ยื่นครบ ๓ ปี</div>
+          <div className="p-3.5 bg-slate-950/70 rounded-xl border border-slate-800/80 shadow-2xs">
+            <div className="font-bold text-slate-200 mb-1">๔. วันที่มีหน้าที่ยื่นครบ ๓ ปี</div>
             <p className="leading-relaxed">
               ตาม พ.ร.ป. ป.ป.ช. ๒๕๖๑ มาตรา ๑๐๕ วรรคสาม เมื่อดำรงตำแหน่งเดิมหรือใหม่ติดต่อกันครบ ๓ ปี ให้นับวันดำรงตำแหน่งครบ ๓ ปีเป็นวันเริ่มมีหน้าที่ และยื่นภายใน ๓๐ วัน (หรือ ๖๐ วันตามประกาศ)
             </p>
