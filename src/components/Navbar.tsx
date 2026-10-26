@@ -15,8 +15,8 @@ export const Navbar: React.FC = () => {
               <span className="text-base sm:text-lg font-bold tracking-tight text-white whitespace-nowrap block">
                 เครื่องคำนวณวันยื่นบัญชีทรัพย์สิน
               </span>
-              <span className="text-[11px] text-slate-400 hidden sm:block whitespace-nowrap">
-                Asset Declaration Deadline Calculator (ป.ป.ช.)
+              <span className="text-[11px] text-slate-400 block whitespace-nowrap">
+                Asset Declaration Deadline Calculator (ป.ป.ช.) By Boy Blur  Blur Loeikor
               </span>
             </div>
           </div>

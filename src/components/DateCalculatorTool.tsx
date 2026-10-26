@@ -153,7 +153,8 @@ ${calculation.wasPostponed
   ? `* หมายเหตุวันหยุด: วันสิ้นสุดเดิมตรงกับวันหยุดทำการ (${calculation.holidayName ? `วันหยุดนักขัตฤกษ์: ${calculation.holidayName}` : 'วันหยุดเสาร์-อาทิตย์'}) ให้นับวันทำการก่อนวันสิ้นสุด เลื่อนขึ้นมาเป็นวัน${THAI_DAYS[calculation.adjustedDate.getDay()]}ที่ ${formatThaiDateFull(calculation.adjustedDate)}`
   : '* วันสิ้นสุดตรงกับวันทำการปกติของราชการ'}
 วันหมดเขตยื่นบัญชีทรัพย์สิน (วันสุดท้าย): ${formatThaiDateFull(calculation.deadlineString)} (วัน${THAI_DAYS[calculation.adjustedDate.getDay()]})
-สถานะปัจจุบัน: ${urgency.label}`;
+สถานะปัจจุบัน: ${urgency.label}
+คำนวณโดย: เครื่องคำนวณวันยื่นบัญชีทรัพย์สิน · Asset Declaration Deadline Calculator (ป.ป.ช.) By Boy Blur  Blur Loeikor`;
 
   const handleCopySummary = async () => {
     try {
@@ -183,7 +184,7 @@ ${calculation.wasPostponed
                 เครื่องคำนวณวันและกำหนดเวลายื่นบัญชีทรัพย์สิน
               </h1>
               <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
-                คำนวณวันครบกำหนด ๖๐ วัน / ๙๐ วัน กรณีตรงกับวันหยุดราชการ ให้นับวันทำการก่อนวันสิ้นสุด
+                Asset Declaration Deadline Calculator (ป.ป.ช.) By Boy Blur  Blur Loeikor
               </p>
             </div>
           </div>
@@ -787,6 +788,9 @@ ${calculation.wasPostponed
           )}
           <div className="text-base font-bold pt-2 border-t">
             วันหมดเขตยื่นบัญชีทรัพย์สิน (วันสุดท้าย): {formatThaiDateFull(calculation.deadlineString)} (วัน{THAI_DAYS[calculation.adjustedDate.getDay()]})
+          </div>
+          <div className="text-xs text-gray-500 pt-2 text-right">
+            เครื่องคำนวณวันยื่นบัญชีทรัพย์สิน · Asset Declaration Deadline Calculator (ป.ป.ช.) By Boy Blur  Blur Loeikor
           </div>
         </div>
       </div>

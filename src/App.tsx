@@ -17,7 +17,7 @@ export default function App() {
       <footer className="bg-slate-950 border-t border-slate-850/80 py-6 text-xs text-slate-400 text-center no-print">
         <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="text-slate-400">
-            เครื่องคำนวณวันยื่นบัญชีทรัพย์สินและหนี้สิน · พ.ร.ป. ป.ป.ช. พ.ศ. ๒๕๖๑
+            เครื่องคำนวณวันยื่นบัญชีทรัพย์สิน · Asset Declaration Deadline Calculator (ป.ป.ช.) By Boy Blur  Blur Loeikor
           </div>
           <div className="text-slate-500">
             กรณีวันสิ้นสุดตรงกับวันหยุดทำการ ให้นับวันทำการก่อนวันสิ้นสุด
